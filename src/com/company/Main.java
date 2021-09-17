@@ -6,6 +6,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
+
         long a=0;
         long start = System.nanoTime();
         for (int n=0; n<1000000; n++) {
