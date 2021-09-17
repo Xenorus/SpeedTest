@@ -29,6 +29,6 @@ public class Main {
     }
 
     public static String stopwatch (long start, long stop, int number) {
-        return ("Цикл " + number + "исполнялся" + ((stop - start)/1000000000) + " сек.");
+        return ("Цикл " + number + " исполнялся " + ((stop - start)/1000000000) + " сек.");
     }
 }
