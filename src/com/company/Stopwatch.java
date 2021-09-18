@@ -3,40 +3,32 @@ package com.company;
 import java.io.*;
 
 public class Stopwatch {
-    public static long start;
-    public static long stop;
+    public static long T;
 
     public Stopwatch() {
-        start = System.nanoTime();
+        T = System.nanoTime();
     }
 
     public Stopwatch(long a) {
-        start = a;
+        T = a;
     }
 
-    public static void point (long start, long a, int number) {
-        stop = a;
-        long time = (stop - start)/1000000000;
-        String text = "Т" + number + " исполнялся " + time + " сек. ";
+    public static void point (String name) {
+        String text = name + " исполнялся " + ((System.nanoTime() - T)/1000000000) + " сек. ";
+        T = System.nanoTime();
         file(text);
     }
 
-    public long getStart() {
-        return start;
+    public long getT() {
+        return T;
     }
 
-    public long getStop() {
-        return stop;
-    }
-
-    public void setStart(long a) {
-        start = a;
-    }
-    public void setStop(long a) {
-        stop = a;
+    public void setT(long a) {
+        T = a;
     }
 
     public static void file(String text) {
+        T = System.nanoTime();
         File file = new File("result.txt");
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
